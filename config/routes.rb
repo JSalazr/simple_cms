@@ -8,10 +8,23 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :pages do
+    member do
+      get :delete
+    end
+  end
+
+  resources :sections do
+    member do
+      get :delete
+    end
+  end
+
   get 'demo/index'
   get 'demo/hello'
   get 'demo/other_hello'
   get 'demo/google'
+  get 'demo/escape_output'
   #default routing
   # get ':controller(/:action(/:id))'
 
